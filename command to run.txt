@@ -1,0 +1,39 @@
+STEP 2: To run backup_GPO.ps1 to PowerShell
+
+Set-ExecutionPolicy RemoteSigned
+enter -> Y -> enter
+
+To run the script: 
+cd C:\GPOBackup
+Press enter
+.\Backup-GPO.ps1
+
+Backup completed.
+Now GPOBackup folder has 3 folders inside it:
+1. ADMX
+2. LGPO
+3. Backup-GPO.ps1
+
+Step 3: Restore to another computer
+# Copy your backup folder to the target computer
+# Make sure LGPO.exe exists on this machine
+# run PowerShell as Administrator to run scripts
+command to run:
+
+Set-ExecutionPolicy RemoteSigned
+
+
+Press Enter
+
+Type Y and press Enter
+
+cd C:\GPOBackup
+.\Restore-GPO.ps1
+
+
+# Restore completed
+# for error: Check if the file is blocked
+    1. Right-click your script file (C:\GPOBackup\Restore-GPO.ps1), Select Properties, Look at the bottom of the General tab
+
+    This file came from another computer and might be blocked.
+[Unblock]
